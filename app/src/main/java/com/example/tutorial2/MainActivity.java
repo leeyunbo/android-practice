@@ -1,59 +1,39 @@
 package com.example.tutorial2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Button;
+
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button c = (Button) findViewById(R.id.calButton);
+        Button l = (Button) findViewById(R.id.listViewButton);
+        c.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),CalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        l.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ListAlarmActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    public void onClick(View v) {
+        Intent intent = new Intent(this, ListAlarmActivity.class);
+        startActivity(intent);
     }
 
-    public void addClick(View v) {
-        EditText number1 = (EditText) findViewById(R.id.number1);
-        EditText number2 = (EditText) findViewById(R.id.number2);
-        TextView result = (TextView) findViewById(R.id.result);
-        int n1 = Integer.parseInt(number1.getText().toString());
-        int n2 = Integer.parseInt(number2.getText().toString());
-        result.setText(Integer.toString(n1+n2));
-    }
-
-    public void subClick(View v) {
-        EditText number1 = (EditText) findViewById(R.id.number1);
-        EditText number2 = (EditText) findViewById(R.id.number2);
-        TextView result = (TextView) findViewById(R.id.result);
-
-        int n1 = Integer.parseInt(number1.getText().toString());
-        int n2 = Integer.parseInt(number2.getText().toString());
-        result.setText(Integer.toString(n1-n2));
-    }
-
-    public void mulClick(View v) {
-        EditText number1 = (EditText) findViewById(R.id.number1);
-        EditText number2 = (EditText) findViewById(R.id.number2);
-        TextView result = (TextView) findViewById(R.id.result);
-
-        int n1 = Integer.parseInt(number1.getText().toString());
-        int n2 = Integer.parseInt(number2.getText().toString());
-        result.setText(Integer.toString(n1*n2));
-    }
-
-    public void divClick(View v) {
-        EditText number1 = (EditText) findViewById(R.id.number1);
-        EditText number2 = (EditText) findViewById(R.id.number2);
-        TextView result = (TextView) findViewById(R.id.result);
-
-        int n1 = Integer.parseInt(number1.getText().toString());
-        int n2 = Integer.parseInt(number2.getText().toString());
-        if(n2==0)
-        {
-            n2 = 1;
-        }
-        result.setText(Integer.toString(n1/n2));
-    }
 }
