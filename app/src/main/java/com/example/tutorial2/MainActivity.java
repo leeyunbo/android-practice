@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button c = (Button) findViewById(R.id.calButton);
         Button l = (Button) findViewById(R.id.listViewButton);
+        Button n = (Button) findViewById(R.id.navButton);
+
         c.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),CalActivity.class);
@@ -30,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        n.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),NavActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
-    public void onClick(View v) {
-        Intent intent = new Intent(this, ListAlarmActivity.class);
-        startActivity(intent);
-    }
+
 
 }

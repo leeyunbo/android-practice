@@ -15,7 +15,6 @@
         android:layout_marginLeft="89dp"
         android:layout_marginTop="149dp"
         android:text="계산기"
-        android:onClick="onClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,16 +25,15 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:text="리스트알람"
-        android:onClick="onClick"
         app:layout_constraintBaseline_toBaselineOf="@+id/calButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/navButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Button"
+        android:text="네비게이션바"
         app:layout_constraintStart_toStartOf="@+id/calButton"
         app:layout_constraintTop_toBottomOf="@+id/calButton" />
 
@@ -46,6 +44,6 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:text="Button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/navButton"
         app:layout_constraintEnd_toEndOf="@+id/listViewButton" />
 </android.support.constraint.ConstraintLayout>
