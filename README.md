@@ -4,4 +4,4 @@
 
 android studio, java 이용 
 
-테스트 기기 - G6
+테스트 기기 - G6, 에뮬레이터
